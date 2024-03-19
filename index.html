@@ -28,6 +28,9 @@
         </header>
 
         <br><br>
+	<h1>We are sorry to announce that The Cottage SMP has officially shut down.</h1>
+	<h2> As of 3/18/2024 the server has shut down. we cannot guarantee how long the server host will continue providing services after the final billing period expires.</h2>
+	    <br><br>
         <div class="status" id="server-status">Loading...</div>
         <div class="info" id="server-info">
             IP Address: mc.thecottagesmp.com
@@ -64,13 +67,13 @@
                             '<br>Java port: 25565 (default)' +
                             '<br>Bedrock port: 19132 (default)';
                     } else {
-                        statusElement.innerHTML = 'Offline';
+                        statusElement.innerHTML = 'Server is offline or restarting - server billing period may have expired';
                         infoElement.innerHTML = 'IP Address: ' + ip +
                             '<br>Java port:  25565 (default)' +
                             '<br>Bedrock port: 19132 (default)';
                     }
                 } else {
-                    statusElement.innerHTML = 'Error';
+                    statusElement.innerHTML = 'Error - server billing period may have expired';
                     infoElement.innerHTML = 'IP Address: ' + ip +
                         '<br>Java port: 25565 (default)' +
                         '<br>Bedrock port: 19132 (default)';
@@ -78,7 +81,7 @@
             };
 
             xhr.onerror = function () {
-                statusElement.innerHTML = 'Error';
+                statusElement.innerHTML = 'Error - server billing period may have expired';
                 infoElement.innerHTML = 'IP Address: ' + ip +
                     '<br>Java port: 25565 (default)' +
                     '<br>Bedrock port: 19132 (default)';
@@ -87,7 +90,6 @@
             xhr.send();
         }
 
-        // Initial server status check
         updateServerStatus('mc.thecottagesmp.com');
 
         // Update server status every 5 seconds
